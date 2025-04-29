@@ -1,4 +1,4 @@
-**Laboratorio 6: Calcolatrice.**
+## Laboratorio 6: Calcolatrice.
 
 ## Funzionalità
 
@@ -55,17 +55,3 @@ La pipeline esegue:
 
 Puoi visualizzare i risultati direttamente nella sezione **Actions** del repository.
 
-## Esempio di utilizzo
-
-```javascript
-const { add, subtract, multiply, divide } = require('./calc');
-
-console.log(add(5, 3));        // Output: 8
-console.log(subtract(10, 4)); // Output: 6
-console.log(multiply(2, 6));  // Output: 12
-console.log(divide(9, 3));    // Output: 3
-```
-
-## Copertura del codice
-
-I test coprono il 100% delle righe di codice, come richiesto dal progetto. Il report HTML è consultabile aprendo `coverage/lcov-report/index.html` nel browser.
