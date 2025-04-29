@@ -1,6 +1,3 @@
-```markdown
-# ssgs-calc
-
 **Laboratorio 6: Calcolatrice.**
 
 ## Funzionalità
