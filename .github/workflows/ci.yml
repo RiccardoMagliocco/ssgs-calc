@@ -1,0 +1,28 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - master  # O 'main' se il tuo ramo principale si chiama 'main'
+  pull_request:
+    branches:
+      - master  # O 'main'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # Puoi scegliere la versione di Node.js che usi
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
