@@ -1,4 +1,4 @@
-const calculator = require('./calc');
+const calculator = require('../calc');
 
 test('addizione corretta: 2 + 2 = 4', () => {
     const result = calculator.add(2, 2);
