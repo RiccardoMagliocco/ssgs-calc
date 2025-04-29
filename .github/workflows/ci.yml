@@ -26,13 +26,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Install Jest globally (opzionale, solo per risolvere i permessi)
-        run: npm install -g jest
+        run: npm install 
 
       - name: Run tests with coverage
-        run: npm test -- --coverage  # Esegui i test con Jest
+        run: npm test -- --coverage 
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
