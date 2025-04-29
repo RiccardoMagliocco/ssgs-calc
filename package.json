@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "keywords": [],
-  "author": "",
+  "author": "Riccardo",
   "license": "ISC",
-  "description": "",
+  "description": "Calcolatrice base sviluppata in Node.js con test e CI",
   "devDependencies": {
     "jest": "^29.7.0"
   }
