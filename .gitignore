@@ -1,0 +1,23 @@
+# Dipendenze Node.js
+node_modules/
+
+# Report di test (Jest, coverage)
+coverage/
+
+# Variabili ambiente
+.env
+
+# Log di errori
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Config editor
+.vscode/
+.idea/
+
+# File di sistema
+.DS_Store
+
+# Build (se usi TypeScript o bundler)
+dist/
