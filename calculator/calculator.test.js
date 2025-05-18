@@ -26,5 +26,5 @@ test('divisione 10 / 2 deve essere uguale a 5', () => {
 });
 
 test('divisione per zero deve lanciare un errore', () => {
-  expect(() => divide(5, 0)).toThrow("Cannot divide by zero");
+  expect(() => divide(10, 0)).toThrow("Cannot divide by zero");
 });
