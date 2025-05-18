@@ -1,4 +1,4 @@
-name: Node.js CI
+name: CI Pipeline
 
 on:
   push:
@@ -7,20 +7,23 @@ on:
     branches: [ main ]
 
 jobs:
-  build-and-test:
+  test:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
 
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v3
       with:
         node-version: '18'
 
     - name: Install dependencies
       run: npm install
 
+    - name: Fix permissions on node_modules binaries
+      run: chmod +x ./node_modules/.bin/jest
+
     - name: Run tests
-      run: npm test
+      run: npx jest
