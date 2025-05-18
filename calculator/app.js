@@ -12,8 +12,16 @@ console.log("1. Addizione");
 console.log("2. Sottrazione");
 console.log("3. Moltiplicazione");
 console.log("4. Divisione");
+console.log("Digita 'exit' per uscire.");
+console.log("----------------------------------");
 
 rl.question("Seleziona un'operazione (1-4): ", (operation) => {
+  if (operation.toLowerCase() === 'exit') {
+    console.log("Uscita dal programma. Arrivederci!");
+    rl.close();
+    return;
+  }
+
   if (!['1', '2', '3', '4'].includes(operation)) {
     console.error("Operazione non valida.");
     rl.close();
@@ -26,7 +34,7 @@ rl.question("Seleziona un'operazione (1-4): ", (operation) => {
       const b = parseFloat(input2);
 
       if (isNaN(a) || isNaN(b)) {
-        console.error("Input non valido: inserire solo numeri.");
+        console.error("Errore: inserire solo numeri validi.");
         rl.close();
         return;
       }
@@ -34,11 +42,21 @@ rl.question("Seleziona un'operazione (1-4): ", (operation) => {
       try {
         let result;
         switch (operation) {
-          case '1': result = calculator.add(a, b); break;
-          case '2': result = calculator.subtract(a, b); break;
-          case '3': result = calculator.multiply(a, b); break;
-          case '4': result = calculator.divide(a, b); break;
+          case '1':
+            result = calculator.add(a, b);
+            break;
+          case '2':
+            result = calculator.subtract(a, b);
+            break;
+          case '3':
+            result = calculator.multiply(a, b);
+            break;
+          case '4':
+            if (b === 0) throw new Error("Divisione per zero non consentita.");
+            result = calculator.divide(a, b);
+            break;
         }
+
         console.log(`Risultato: ${result}`);
       } catch (err) {
         console.error("Errore:", err.message);
